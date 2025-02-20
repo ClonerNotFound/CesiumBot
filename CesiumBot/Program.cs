@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using CesiumBot.commands;
 using CesiumBot.config;
 using DSharpPlus;
 using DSharpPlus.CommandsNext;
@@ -40,6 +41,7 @@ namespace CesiumBot
             };
 
             Commands = Client.UseCommandsNext(commandsConfig);
+            Commands.RegisterCommands<TestCommands>();
 
             await Client.ConnectAsync();
             await Task.Delay(-1);
